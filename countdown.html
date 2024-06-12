@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August Leadership Camp 2024</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            color: #007bb5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0288d1;
+            padding: 20px;
+        }
+        .header img {
+            margin-right: 20px;
+            width: 50px;
+            height: auto;
+        }
+        .countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://images.app.goo.gl/1s2GUZzM48FFLKXW8.jpg" alt="PHF Logo">
+        <div>
+            <h1>Pure Heart Islamic Foundation of Nigeria (PHF)</h1>
+            <h2>Oyo Local Branch</h2>
+        </div>
+    </div>
+    <h6>August Leadership Camp 2024</h6>
+    <div class="countdown" id="countdown"></div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("August 2, 2024 12:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "The event has started!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
